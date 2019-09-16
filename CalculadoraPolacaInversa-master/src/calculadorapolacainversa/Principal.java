@@ -24,8 +24,10 @@ public class Principal {
         int numeroDatos = sc.nextInt(); //Lee la siguiente linea ingresada como los datos a operar
         System.out.println("Numeros:");
         String[] datos = new String[(numeroDatos*2)-1];
+        int[] buscarValor = new int[numeroDatos];        
         for (int x=0;x<numeroDatos;x++){
-           datos[x] = Integer.toString((int) (Math.random()*20)+1);
+           datos[x] = Integer.toString((int) (Math.random()*100)+1);
+           buscarValor [x]=Integer.valueOf(datos[x]);
            z++;
            
            System.out.print(datos[x]+",");
@@ -97,5 +99,17 @@ public class Principal {
         } else {
             System.out.println(numeros[0]);
         }
+        System.out.println("Digite para buscar el valor en el arreglo");
+        
+        int t = sc.nextInt();
+        System.out.println("Posicion del valor buscado:");
+        
+        for (int x = 0; x < numeroDatos; x++) {
+            if(buscarValor[x]==t){
+            System.out.print( x+ "," );
+            }
+        }
+        System.out.println("");
+        
     }
 }
